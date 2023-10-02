@@ -19,5 +19,5 @@ use App\Http\Controllers\GPTController;
 //     return $request->user();
 // });
 
-Route::post('correctfrench',[GPTController::class,'correctFrench']);
+Route::post('checker',[GPTController::class,'checker']);
 Route::get('test',[GPTController::class,'test']);

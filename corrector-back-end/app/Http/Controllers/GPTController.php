@@ -15,33 +15,46 @@ class GPTController extends Controller
     public function __construct()
     {
         $this->URL_API = 'https://api.openai.com/v1/chat/completions';
-        $this->TOKEN_API = env('OPENAI_API_KEY');
+        $this->TOKEN_API = config('openai.api_token');
     }
 
 
-    public function correctFrench(Request $request)
+    public function checker(Request $request)
     {
         $text = $request->text;
-        $language = $request->language;
-
-        $response = Http::withoutVerifying() // para evitar la verificacion de certificado ssl 
+        if (!isset($text)) {
+            return response()->json([
+                'error' => 'I\'m sorry, but you haven\'t provided a sentence for me to translate or correct. Could you please provide a sentence for me to work with?'
+            ]);
+        }
+        try {
+            $response = Http::withoutVerifying() // para evitar la verificacion de certificado ssl 
             ->withHeaders([
-                'Authorization' => 'Bearer ' . env('OPENAI_API_KEY'),
+                'Authorization' => 'Bearer ' . $this->TOKEN_API,
                 'Content-Type' => 'application/json',
             ])->post($this->URL_API, [
                 "model" => "gpt-3.5-turbo",
                 "messages" => [
                     [
                         "role" => "user",
-                        "content" => "Traduce al".$language. " y corrige esta frase:" . $text
+                        "content" => " corrects the spelling errors in this sentence in french " .$text
                     ]
                 ],
                 "temperature" => 0.5,
                 'max_tokens' => 1000,
             ]);
-        $content = $response['choices'][0]['message']['content'];
-        return response()->json([
-            'content' => $content
-        ]);
+            if($response->successful()){
+                $content = $response['choices'][0]['message']['content'];
+                return response()->json([
+                    'content' => $content
+                ]);
+            } else {
+                return $response;
+            }
+        } catch (\Exception $e) {
+            return response()->json([
+                'error' => $e
+            ]);
+        }
     }
 }
