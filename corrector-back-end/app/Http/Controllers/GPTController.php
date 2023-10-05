@@ -18,6 +18,16 @@ class GPTController extends Controller
         $this->TOKEN_API = config('openai.api_token');
     }
 
+    public function index()
+    {
+        return response()->json([
+            "status"=>200,
+            "index"=>"API_CORRECTEUR",
+            "model" => "gpt-3.5-turbo",
+            "role" => "user"
+        ],200);
+    }
+
 
     public function checker(Request $request)
     {
@@ -46,8 +56,9 @@ class GPTController extends Controller
             if($response->successful()){
                 $content = $response['choices'][0]['message']['content'];
                 return response()->json([
+                    'status'=>200,
                     'content' => $content
-                ]);
+                ],200);
             } else {
                 return $response;
             }
