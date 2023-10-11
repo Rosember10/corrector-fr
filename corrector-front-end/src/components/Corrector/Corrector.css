@@ -38,8 +38,8 @@ article {
     display: flex;
     flex-wrap: wrap;
     max-width: 80rem;
-    gap: 1rem;
-    background-color: #fcfcfc;
+    gap: .7rem;
+    background-color: #F1F3F9;
     border-radius: .5rem;
     padding: 1rem;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
@@ -51,9 +51,10 @@ article {
 
 .corrector_input textarea,
 .corrector_output textarea {
+    resize: none;
     width: 100%;
     height: 200px;
-    border-radius: .5rem;
+    border-radius: .3rem;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
@@ -91,12 +92,15 @@ button {
 .corrector_input--buttons span ,
 .corrector_output span {
     display: block;
+    text-align: center;
     box-sizing: border-box;
     border-radius: 0.2em;
     padding: .3rem .7rem;
     color: #FFF;
     transform: translateY(-0.2em);
 }
+
+
 
 
 .button_corriger {
@@ -140,15 +144,31 @@ button:active .button_copy
     transition: transform .1s ease;
 }
 
+.button_delete img
+{
+    vertical-align: middle;
+}
+
+.button_delete i 
+{
+    color: white;
+}
+
+
 
 .corrector_output {
     flex: 1 1 10rem;
-    
-    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
 }
+
+.corrector_output-actions{
+    display: flex;
+    justify-content: end;
+}
+
+
 
 .corrector_output button {
     margin-top: .5rem;
-    
-    
+
+   
 }

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import './Corrector.css';
 import franceLogo from '../../assets/france.png';
+import deleteLogo from '../../assets/delete.svg'
 function Corrector() {
     const URL_API = 'https://apichecker.rosemberg.dev/api/checker';
 
@@ -22,19 +23,20 @@ function Corrector() {
         }
         console.log(requestOption.body);
 
-        fetch(URL_API, requestOption)
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(data.content);
-                setOutputValue(data.content);
+        // fetch(URL_API, requestOption)
+        //     .then((res) => res.json())
+        //     .then((data) => {
+        //         console.log(data.content);
+        //         setOutputValue(data.content);
 
-            })
+        //     })
     }
 
     const deleteText = () => {
         setInputValue('');
         setOutputValue('');
     }
+
 
 
     return (
@@ -60,9 +62,10 @@ function Corrector() {
                                 <button
                                     onClick={deleteText}>
                                     <span className="button_delete">
-                                        Effacer
+                                        Effacer <img src={deleteLogo} alt="france logo" width='20px' />
                                     </span>
                                 </button>
+                                
                                 <button
                                     onClick={correctValue}>
                                     <span className="button_corriger">
@@ -73,18 +76,20 @@ function Corrector() {
                         </div>
                     </div>
                     <div className="corrector_output">
-                    <textarea
+                        <textarea
                             value={outputValue}
                             name="text"
                             id="text"
                             cols={30}
                             rows={5}
-                            />
-                        <button  onClick={() => navigator.clipboard.writeText(outputValue)} >
-                        <span className="button_copy">
-                                        copier
-                                    </span>
-                        </button>
+                        />
+                        <div className="corrector_output-actions">
+                            <button onClick={() => navigator.clipboard.writeText(outputValue)} >
+                                <span className="button_copy">
+                                    copier
+                                </span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </article>
