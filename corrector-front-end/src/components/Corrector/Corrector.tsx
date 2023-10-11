@@ -1,5 +1,6 @@
 import { useState } from "react";
-
+import './Corrector.css';
+import franceLogo from '../../assets/france.png';
 function Corrector() {
     const URL_API = 'https://apichecker.rosemberg.dev/api/checker';
 
@@ -20,7 +21,7 @@ function Corrector() {
             body: JSON.stringify(valueToCorrect)
         }
         console.log(requestOption.body);
-        
+
         fetch(URL_API, requestOption)
             .then((res) => res.json())
             .then((data) => {
@@ -39,31 +40,52 @@ function Corrector() {
     return (
         <main>
             <article>
-                <span>Français</span>
-                <div className="corrector_input">
-                    <textarea
-                        value={inputValue}
-                        name="text"
-                        id="text"
-                        cols={30}
-                        rows={5}
-                        onChange={(e) => setInputValue(e.target.value)}
-                        placeholder="Saisissez ou collez votre texte ici pour corriger son orthographe ou sa grammaire..." />
-                    <div className="corrector_input--actions">
-                        <span> {inputValue.length}/100 Limite</span>
-                        <div className="corrector_input-buttons">
-                            <button className="button_delete"
-                                onClick={deleteText}
-                            >
-                                Effacer</button>
-                            <button className="button_correct"
-                                onClick={correctValue}>Corriger</button>
+                <div className="icon_language">
+                    <img src={franceLogo} alt="france logo" width='30px' />
+                    <span>Français </span>
+                </div>
+                <div className="corrector">
+                    <div className="corrector_input">
+                        <textarea
+                            value={inputValue}
+                            name="text"
+                            id="text"
+                            cols={30}
+                            rows={5}
+                            onChange={(e) => setInputValue(e.target.value)}
+                            placeholder="   Saisissez ou collez votre texte ici pour corriger son orthographe ou sa grammaire..." />
+                        <div className="corrector_input_actions">
+                            <span className="label_limit"> {inputValue.length}/1000 Limite</span>
+                            <div className="corrector_input--buttons">
+                                <button
+                                    onClick={deleteText}>
+                                    <span className="button_delete">
+                                        Effacer
+                                    </span>
+                                </button>
+                                <button
+                                    onClick={correctValue}>
+                                    <span className="button_corriger">
+                                        Corriger
+                                    </span>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className="corrector_output">
-                    <div>{outputValue} </div>
-                    <button className="button_copy" onClick={()=>navigator.clipboard.writeText(outputValue)} >Copier</button>
+                    <div className="corrector_output">
+                    <textarea
+                            value={outputValue}
+                            name="text"
+                            id="text"
+                            cols={30}
+                            rows={5}
+                            />
+                        <button  onClick={() => navigator.clipboard.writeText(outputValue)} >
+                        <span className="button_copy">
+                                        copier
+                                    </span>
+                        </button>
+                    </div>
                 </div>
             </article>
         </main>

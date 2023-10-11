@@ -26,14 +26,13 @@
 html
 {
   overflow-x: hidden;
+  background: url(../src/assets/body.png)no-repeat;
+  background-size: cover;
+  
   
 }
 
-body 
-{
-  background: url(../src/assets/body.png)no-repeat;
-  background-size: cover;
-}
+
 
 
 

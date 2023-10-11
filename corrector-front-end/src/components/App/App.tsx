@@ -6,11 +6,11 @@ import './App.css'
 export default function App() {
  
   return (
-    <main>
+    <>
       <Header/>
       <Corrector/>
       <Footer/>
-    </main>
+    </>
   )
 }
 

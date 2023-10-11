@@ -1,3 +1,154 @@
+main {
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh; */
+    /* max-width: 80rem; */
+   
+}
+
+article {
+    padding: 1rem 1rem;
+    margin: 3rem 3rem;
+    /* width: 50%;
+  height: 50%; */
+}
+
+.icon_language {
+    display: inline-flex;
+    text-align: center;
+    align-items: center;
+    gap: .5rem;
+    border: 1px solid black;
+    border-radius: .3rem;
+    padding: 0 .2rem;
+
+}
+
+.corrector {
+    /* display: grid;
+    grid-template-columns: 1.4fr 0.6fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    ". ."; */
 
 
-function Corrector
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 80rem;
+    gap: 1rem;
+    background-color: #fcfcfc;
+    border-radius: .5rem;
+    padding: 1rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.corrector_input {
+    flex: 1 2 30rem;
+}
+
+.corrector_input textarea,
+.corrector_output textarea {
+    width: 100%;
+    height: 200px;
+    border-radius: .5rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.corrector_input_actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    margin-top: .5rem;
+
+}
+
+.label_limit {
+    font-weight: bold;
+    padding-left: .4rem;
+}
+
+.corrector_input--buttons {
+    display: flex;
+    gap: .5rem;
+}
+
+/*https://uiverse.io/Voxybuns/lucky-fireant-71*/
+button {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    border: none;
+    border-radius: 0.2em;
+    background: black;
+    cursor: pointer;
+}
+
+.corrector_input--buttons span ,
+.corrector_output span {
+    display: block;
+    box-sizing: border-box;
+    border-radius: 0.2em;
+    padding: .3rem .7rem;
+    color: #FFF;
+    transform: translateY(-0.2em);
+}
+
+
+.button_corriger {
+    background: #7CD87A;
+}
+
+.button_delete {
+    background: #E76E6E;
+}
+
+.button_copy{
+    background: #81DAF6;
+}
+
+button:hover .button_corriger {
+    /* Pull the button upwards when hovered */
+    box-shadow: 0 0 .4rem #7CD87A;
+    transition: color .7s ease;
+    color: black;
+}
+
+button:hover .button_delete {
+    box-shadow: 0 0 .4rem #E76E6E;
+    transition: color .7s ease;
+    color: black;
+}
+
+button:hover .button_copy {
+    /* Pull the button upwards when hovered */
+    box-shadow: 0 0 .4rem #7CD87A;
+    transition: color .7s ease;
+    color: black;
+}
+
+button:active .button_corriger,
+button:active .button_delete,
+button:active .button_copy
+{
+    /* Push the button downwards when pressed */
+    transform: translateY(0);
+    transition: transform .1s ease;
+}
+
+
+.corrector_output {
+    flex: 1 1 10rem;
+    
+    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
+}
+
+.corrector_output button {
+    margin-top: .5rem;
+    
+    
+}

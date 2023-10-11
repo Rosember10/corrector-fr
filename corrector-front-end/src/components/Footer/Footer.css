@@ -1,8 +1,18 @@
 footer
 {
+    margin-top: 2rem;
     background-color: black;
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 1rem 8%;
     align-items: center;
+    color:#fff ;
+    
    
+}
+
+footer a 
+{
+    color: #fff;
 }
