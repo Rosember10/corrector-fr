@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import './Corrector.css';
 import franceLogo from '../../assets/france.png';
 
@@ -11,8 +11,21 @@ import {BsCheckSquareFill} from 'react-icons/bs';
 function Corrector() {
     const URL_API = 'https://apichecker.rosemberg.dev/api/checker';
 
-    const [inputValue, setInputValue] = useState<string>("")
-    const [outputValue, setOutputValue] = useState<string>("")
+    const [inputValue, setInputValue] = useState<string>("");
+    const [outputValue, setOutputValue] = useState<string>("");
+    const [classCorriger,setClassCorriger] = useState<string>("button_corriger-off");
+    const [isValid,setIsValid] = useState<boolean>(false);
+
+    useEffect(()=>{
+        if(inputValue.length>=3 ){
+             setIsValid(false) 
+             setClassCorriger("button_corriger")
+        } else {
+            setIsValid(true)
+            setClassCorriger("button_corriger-off")
+        }
+
+    },[inputValue])
 
 
     const correctValue = () => {
@@ -42,11 +55,6 @@ function Corrector() {
         setInputValue('');
         setOutputValue('');
     }
-
-    
-    
-
-
 
 
 
@@ -78,8 +86,9 @@ function Corrector() {
                                 </button>
                                 
                                 <button
+                                    disabled={isValid}
                                     onClick={correctValue}>
-                                    <span className="button_corriger">
+                                    <span className={classCorriger}>
                                         Corriger <BsCheckSquareFill/>
                                     </span>
                                 </button>

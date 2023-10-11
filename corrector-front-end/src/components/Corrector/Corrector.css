@@ -112,6 +112,14 @@ button {
     background: #7CD87A;
 }
 
+.button_corriger-off
+{
+    background-color: gray;
+    cursor: none;
+}
+
+
+
 .button_delete {
     background: #E76E6E;
 }
@@ -122,7 +130,9 @@ button {
 
 .button_delete svg,
 .button_corriger svg,
-.button_copy svg {
+.button_copy svg ,
+.button_corriger-off svg 
+{
     vertical-align: middle;
 }
 
