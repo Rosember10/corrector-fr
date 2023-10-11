@@ -4,7 +4,8 @@ main {
     align-items: center;
     height: 60vh; */
     /* max-width: 80rem; */
-   
+    min-height: 60vh;
+
 }
 
 article {
@@ -54,8 +55,15 @@ article {
     resize: none;
     width: 100%;
     height: 200px;
+    padding: 1rem 1rem;
+    font-size: 1.1rem;
     border-radius: .3rem;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.corrector_output textarea {
+    font-weight: 700;
+    
 }
 
 .corrector_input_actions {
@@ -89,7 +97,7 @@ button {
     cursor: pointer;
 }
 
-.corrector_input--buttons span ,
+.corrector_input--buttons span,
 .corrector_output span {
     display: block;
     text-align: center;
@@ -100,9 +108,6 @@ button {
     transform: translateY(-0.2em);
 }
 
-
-
-
 .button_corriger {
     background: #7CD87A;
 }
@@ -111,8 +116,14 @@ button {
     background: #E76E6E;
 }
 
-.button_copy{
+.button_copy {
     background: #81DAF6;
+}
+
+.button_delete svg,
+.button_corriger svg,
+.button_copy svg {
+    vertical-align: middle;
 }
 
 button:hover .button_corriger {
@@ -137,38 +148,21 @@ button:hover .button_copy {
 
 button:active .button_corriger,
 button:active .button_delete,
-button:active .button_copy
-{
+button:active .button_copy {
     /* Push the button downwards when pressed */
     transform: translateY(0);
     transition: transform .1s ease;
 }
 
-.button_delete img
-{
-    vertical-align: middle;
-}
-
-.button_delete i 
-{
-    color: white;
-}
-
-
-
 .corrector_output {
     flex: 1 1 10rem;
 }
 
-.corrector_output-actions{
+.corrector_output-actions {
     display: flex;
     justify-content: end;
 }
 
-
-
 .corrector_output button {
     margin-top: .5rem;
-
-   
 }
