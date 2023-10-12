@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import './Corrector.css';
 import franceLogo from '../../assets/france.png';
-
-import {FaTrash} from 'react-icons/fa';
-
-import {BiSolidCopy} from 'react-icons/bi';
-import {BsCheckSquareFill} from 'react-icons/bs';
+import { ToastContainer, toast } from 'react-toastify';
+import { FaTrash } from 'react-icons/fa';
+import 'react-toastify/dist/ReactToastify.css';
+import { BiSolidCopy } from 'react-icons/bi';
+import { BsCheckSquareFill } from 'react-icons/bs';
 
 
 function Corrector() {
@@ -13,22 +13,26 @@ function Corrector() {
 
     const [inputValue, setInputValue] = useState<string>("");
     const [outputValue, setOutputValue] = useState<string>("");
-    const [classCorriger,setClassCorriger] = useState<string>("button_corriger-off");
-    const [isValid,setIsValid] = useState<boolean>(false);
+    const [classCorriger, setClassCorriger] = useState<string>("button_corriger-off");
+    const [isValid, setIsValid] = useState<boolean>(false);
+    const [isValidCopy, setIsValidCopy] = useState<boolean>(false);
+    const [isLoading, setIsLoading] = useState<string>("corrector_output");
 
-    useEffect(()=>{
-        if(inputValue.length>=3 ){
-             setIsValid(false) 
-             setClassCorriger("button_corriger")
+
+    useEffect(() => {
+        if (inputValue.length >= 3) {
+            setIsValid(false)
+            setClassCorriger("button_corriger")
         } else {
             setIsValid(true)
             setClassCorriger("button_corriger-off")
         }
 
-    },[inputValue])
+    }, [inputValue])
 
 
     const correctValue = () => {
+        setIsLoading("corrector_output loader")
         let valueToCorrect = {
             "text": inputValue
         }
@@ -46,6 +50,7 @@ function Corrector() {
             .then((res) => res.json())
             .then((data) => {
                 console.log(data.content);
+                setIsLoading("corrector_output")
                 setOutputValue(data.content);
 
             })
@@ -56,6 +61,27 @@ function Corrector() {
         setOutputValue('');
     }
 
+    const copyValue = ()=>{
+        if(outputValue!=""){
+            setIsValidCopy(true)
+        } else {
+            setIsValidCopy(false)
+        }
+        toast.info('Copier dans le presse-papier!', {
+            position: "top-right",
+            autoClose: 900,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            });
+
+         navigator.clipboard.writeText(outputValue)
+    }
+
+    
 
 
     return (
@@ -81,34 +107,37 @@ function Corrector() {
                                 <button
                                     onClick={deleteText}>
                                     <span className="button_delete">
-                                        Effacer <FaTrash  />
+                                        Effacer <FaTrash />
                                     </span>
                                 </button>
-                                
+
                                 <button
                                     disabled={isValid}
                                     onClick={correctValue}>
                                     <span className={classCorriger}>
-                                        Corriger <BsCheckSquareFill/>
+                                        Corriger <BsCheckSquareFill />
                                     </span>
                                 </button>
                             </div>
                         </div>
                     </div>
-                    <div className="corrector_output">
+                    <div className={isLoading}>
                         <textarea
                             value={outputValue}
                             name="text"
                             id="text-output"
                             cols={30}
                             rows={5}
+                            readOnly={true}
                         />
                         <div className="corrector_output-actions">
-                            <button onClick={() => navigator.clipboard.writeText(outputValue)} >
+                            <button disabled={isValidCopy}
+                            onClick={copyValue} >
                                 <span className="button_copy">
-                                    copier <BiSolidCopy/>
+                                    copier <BiSolidCopy />
                                 </span>
                             </button>
+                            <ToastContainer />
                         </div>
                     </div>
                 </div>
