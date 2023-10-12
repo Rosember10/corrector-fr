@@ -64,21 +64,22 @@ function Corrector() {
     const copyValue = ()=>{
         if(outputValue!=""){
             setIsValidCopy(true)
+            toast.info('Copier dans le presse-papier!', {
+                position: "top-right",
+                autoClose: 900,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                });
+    
+             navigator.clipboard.writeText(outputValue)
         } else {
             setIsValidCopy(false)
         }
-        toast.info('Copier dans le presse-papier!', {
-            position: "top-right",
-            autoClose: 900,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-            });
-
-         navigator.clipboard.writeText(outputValue)
+  
     }
 
     

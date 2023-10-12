@@ -151,7 +151,7 @@ button:hover .button_delete {
 
 button:hover .button_copy {
     /* Pull the button upwards when hovered */
-    box-shadow: 0 0 .4rem #7CD87A;
+    box-shadow: 0 0 .4rem #3498DB;
     transition: color .7s ease;
     color: black;
 }
