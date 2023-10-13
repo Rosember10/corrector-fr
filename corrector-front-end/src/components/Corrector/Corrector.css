@@ -1,5 +1,6 @@
 main {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -7,6 +8,7 @@ main {
 article {
     padding: 1rem 1rem;
     margin: 3rem 3rem;
+  
 }
 .icon_language {
     display: inline-flex;

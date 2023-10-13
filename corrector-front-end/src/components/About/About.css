@@ -1,0 +1,43 @@
+.about {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    min-width: 55vw;
+    gap: .5rem;
+}
+
+
+.about img {
+    width: 25vw;
+    object-fit: cover;
+    border-radius: 50rem;
+    filter: drop-shadow(0 0 .4rem #ac2dac);
+    animation: glowAnimation 1s infinite alternate;
+}
+
+@keyframes glowAnimation {
+    0% {
+        filter: drop-shadow(0 0 .2rem #ac2dac);
+        /* Glow mínimo */
+    }
+    100% {
+        filter: drop-shadow(0 0 .4rem #ac2dac);
+        /* Glow máximo */
+    }
+}
+
+.about_text {
+    display: flex;
+    flex-direction: column;
+}
+
+.about_text p {
+    width: 55ch;
+    padding: 0rem 2rem
+}
+
+.about_name {
+    text-align: right;
+}

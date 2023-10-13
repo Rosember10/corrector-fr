@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { FaTrash } from 'react-icons/fa';
 import { BiSolidCopy } from 'react-icons/bi';
 import { BsCheckSquareFill } from 'react-icons/bs';
+import About from '../About/About'
 
 
 function Corrector() {
@@ -148,6 +149,7 @@ function Corrector() {
                     </div>
                 </div>
             </article>
+            <About/>
         </main>
     );
 }
