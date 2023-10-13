@@ -72,7 +72,7 @@ function Corrector() {
         if (outputValue) {
             toast.info('Copier dans le presse-papier!', {
                 position: "top-right",
-                autoClose: 900,
+                autoClose: 700,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
@@ -108,7 +108,7 @@ function Corrector() {
                             onChange={(e) => setInputValue(e.target.value)}
                             placeholder="Saisissez ou collez votre texte ici pour corriger son orthographe ou sa grammaire..." />
                         <div className="corrector_input_actions">
-                            <span className="label_limit"> {inputValue.length}/1000 Limite</span>
+                            <span className="label_limit"> {inputValue.length} / 1000 caractères.</span>
                             <div className="corrector_input--buttons">
                                 <button
                                     onClick={deleteText}>
