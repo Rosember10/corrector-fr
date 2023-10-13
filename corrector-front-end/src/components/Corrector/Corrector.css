@@ -4,13 +4,21 @@ main {
     align-items: center;
     height: 60vh; */
     /* max-width: 80rem; */
-    min-height: 60vh;
-
+    
+   
+   
+  
 }
 
 article {
     padding: 1rem 1rem;
     margin: 3rem 3rem;
+    
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; */
     /* width: 50%;
   height: 50%; */
 }
@@ -195,13 +203,13 @@ button:active .button_copy {
     margin: -8px 0 0 -8px;
     width: 16px;
     aspect-ratio: 1;
-    background: #3FB8AF;
+    background: #28bcab;
     animation:
       l2-1 2s  infinite,
       l2-2 1s infinite ;
   }
   .loader:after {
-    background:#FF3D7F;
+    background:#ab1dab;
     animation-delay: -1s,0s;
   }
   @keyframes l2-1 {

@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import './Corrector.css';
 import franceLogo from '../../assets/france.png';
 import { ToastContainer, toast } from 'react-toastify';
-import { FaTrash } from 'react-icons/fa';
 import 'react-toastify/dist/ReactToastify.css';
+import { FaTrash } from 'react-icons/fa';
 import { BiSolidCopy } from 'react-icons/bi';
 import { BsCheckSquareFill } from 'react-icons/bs';
 
@@ -27,12 +27,18 @@ function Corrector() {
             setIsValid(true)
             setClassCorriger("button_corriger-off")
         }
-
     }, [inputValue])
 
 
+    useEffect(() => {
+        outputValue == "" ? setIsValidCopy(true) : setIsValidCopy(false)
+    }, [outputValue])
+
+
     const correctValue = () => {
+        setIsValidCopy(false)
         setIsLoading("corrector_output loader")
+
         let valueToCorrect = {
             "text": inputValue
         }
@@ -61,9 +67,9 @@ function Corrector() {
         setOutputValue('');
     }
 
-    const copyValue = ()=>{
-        if(outputValue!=""){
-            setIsValidCopy(true)
+
+    const copyValue = () => {
+        if (outputValue) {
             toast.info('Copier dans le presse-papier!', {
                 position: "top-right",
                 autoClose: 900,
@@ -73,16 +79,15 @@ function Corrector() {
                 draggable: true,
                 progress: undefined,
                 theme: "colored",
-                });
-    
-             navigator.clipboard.writeText(outputValue)
-        } else {
-            setIsValidCopy(false)
+            });
+            navigator.clipboard.writeText(outputValue)
         }
-  
+
     }
 
-    
+
+
+
 
 
     return (
@@ -133,7 +138,7 @@ function Corrector() {
                         />
                         <div className="corrector_output-actions">
                             <button disabled={isValidCopy}
-                            onClick={copyValue} >
+                                onClick={copyValue} >
                                 <span className="button_copy">
                                     copier <BiSolidCopy />
                                 </span>
