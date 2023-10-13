@@ -1,28 +1,13 @@
 main {
-    /* display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-    height: 60vh; */
-    /* max-width: 80rem; */
-    
-   
-   
-  
 }
 
 article {
     padding: 1rem 1rem;
     margin: 3rem 3rem;
-    
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center; */
-    /* width: 50%;
-  height: 50%; */
 }
-
 .icon_language {
     display: inline-flex;
     text-align: center;
@@ -31,29 +16,19 @@ article {
     border: 1px solid black;
     border-radius: .3rem;
     padding: 0 .2rem;
-
 }
-
 .corrector {
-    /* display: grid;
-    grid-template-columns: 1.4fr 0.6fr;
-    grid-template-rows: 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-    ". ."; */
-
-
+   
+    min-width: 60vw;
     display: flex;
     flex-wrap: wrap;
-    max-width: 80rem;
+    /* max-width: 80rem; */
     gap: .7rem;
     background-color: #F1F3F9;
     border-radius: .5rem;
     padding: 1rem;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
-
 .corrector_input {
     flex: 1 2 30rem;
 }
