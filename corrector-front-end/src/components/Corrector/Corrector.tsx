@@ -7,6 +7,7 @@ import { FaTrash } from 'react-icons/fa';
 import { BiSolidCopy } from 'react-icons/bi';
 import { BsCheckSquareFill } from 'react-icons/bs';
 import About from '../About/About'
+import Info from "../Info/Info";
 
 
 function Corrector() {
@@ -150,6 +151,7 @@ function Corrector() {
                 </div>
             </article>
             <About/>
+            <Info/>
         </main>
     );
 }
