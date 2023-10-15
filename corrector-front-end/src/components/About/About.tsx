@@ -10,7 +10,7 @@ export default function About() {
             <h2>Laissez-moi être la touche finale à chaque phrase que vous écrivez.</h2>
             <div className="about_text">
                 <p>     
-                    <Typed text="Salut, Je suis ici pour t'aider " delay={150} infinite />  
+                    <Typed text="Salut, Je suis Gram et je suis ici pour t'aider " delay={150} infinite />  
                     <span id='pipe' > | </span> 
                 </p> 
                 <img src={gramm} alt="" />

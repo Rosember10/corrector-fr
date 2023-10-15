@@ -14,6 +14,14 @@
 }
 .info h3{
     text-transform: uppercase;
+    color: transparent;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    background-image: linear-gradient(180deg, #b393ff, #1cbbeb);
+    background-clip: text;
+    -webkit-background-clip: text;
+    margin: 1rem;
 }
 .info p {
     font-size: 1.6rem;

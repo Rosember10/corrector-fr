@@ -40,6 +40,7 @@ function Corrector() {
     const correctValue = () => {
         setIsValidCopy(false)
         setIsLoading("corrector_output loader")
+        setOutputValue("Gram est en train de réfléchir...")
 
         let valueToCorrect = {
             "text": inputValue
