@@ -11,6 +11,8 @@ import Info from "../Info/Info";
 
 
 function Corrector() {
+    console.log("rosemberg.dev");
+    
     const URL_API = 'https://apichecker.rosemberg.dev/api/checker';
 
     const [inputValue, setInputValue] = useState<string>("");
@@ -58,9 +60,17 @@ function Corrector() {
         fetch(URL_API, requestOption)
             .then((res) => res.json())
             .then((data) => {
-                console.log(data.content);
+
+                if (data.content){
+                    console.log(data.content);
                 setIsLoading("corrector_output")
                 setOutputValue(data.content);
+                }
+                if(data.error){
+                    setIsLoading("corrector_output")
+                    setOutputValue(data.error.message);
+                }
+                
 
             })
     }
