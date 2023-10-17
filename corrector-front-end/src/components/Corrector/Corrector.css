@@ -31,7 +31,7 @@ article {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 .corrector_input {
-    flex: 1 2 30rem;
+    flex: 1 2 25rem;
 }
 
 .corrector_input textarea,
@@ -148,7 +148,7 @@ button:active .button_copy {
 }
 
 .corrector_output {
-    flex: 1 1 10rem;
+    flex: 1 1 15rem;
 }
 
 .corrector_output-actions {
@@ -166,7 +166,6 @@ button:active .button_copy {
    
     width: 100%;
     height: 200px;
-    aspect-ratio: 1;
     position: relative;
   }
   .loader:before,

@@ -1,9 +1,6 @@
 :root {
   font-weight: 400;
   color-scheme: light dark;
-  margin: 0;
-  padding: 0;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -29,7 +26,17 @@ html
   background: url(../src/assets/body.png)no-repeat;
   background-size: cover;
 
-  
+ 
+}
+
+/******************
+* Responsive design 
+*******************/
+
+@media(max-width:920px){
+  html{
+   font-size: 95%;
+  }
 }
 
 

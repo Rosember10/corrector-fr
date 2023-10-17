@@ -12,6 +12,7 @@
 .about h2 {
     font-size: 2rem;
     font-weight: bold;
+    padding: 0 10%;
 
 }
 
@@ -48,9 +49,20 @@
 
 }
 
+.gramm {
+    text-transform: uppercase;
+    color: transparent;
+    font-weight: bold;
+    letter-spacing: -0.015em;
+    background-image: linear-gradient(360deg, #93cbff, #1cbbeb);
+    background-clip: text;
+    -webkit-background-clip: text;
+  
+}
+
 .about_text > p  {
     width: 25ch;
-    padding: 0rem 1rem;
+    padding: 0rem 2%;
     font-size: 2.5rem;
     font-weight: bold;
 
@@ -65,8 +77,23 @@
 background-image: -webkit-linear-gradient(0deg, #673ab7 22%, #43a6e8 67%);
     background-clip: text;
     -webkit-background-clip: text;
-
     -webkit-text-fill-color: transparent;
+}
 
+/******************
+* Responsive design 
+*******************/
 
+@media(max-width:920px){
+
+    .about_text {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+
+    
+    }
 }
