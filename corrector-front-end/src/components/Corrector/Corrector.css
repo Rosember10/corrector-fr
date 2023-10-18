@@ -239,3 +239,12 @@ button:active .button_copy {
     }
 }
 
+@media(max-width:400px){
+
+    .label_limit {
+     font-size: .5rem;
+    }
+     
+ }
+ 
+

@@ -27,11 +27,17 @@ footer a
 *******************/
 
 @media(max-width:630px){
-    footer p{
-        font-size: .7rem;
-    }
-
-    footer a{
-        font-size: .7rem;
+    footer a,
+    footer p {
+     font-size: .7rem;
     }
 }
+
+@media(max-width:400px){
+
+    footer a,
+    footer p {
+     font-size: .6rem;
+    }
+     
+ }
