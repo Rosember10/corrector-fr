@@ -24,12 +24,13 @@ function Corrector() {
 
 
     useEffect(() => {
-        if (inputValue.length >= 3) {
-            setIsValid(false)
-            setClassCorriger("button_corriger")
-        } else {
+        const chars = inputValue.length;
+        if (chars <= 3 || chars > 300 ) {
             setIsValid(true)
             setClassCorriger("button_corriger-off")
+        } else {
+            setIsValid(false)
+            setClassCorriger("button_corriger")
         }
     }, [inputValue])
 
