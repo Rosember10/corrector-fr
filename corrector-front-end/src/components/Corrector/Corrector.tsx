@@ -121,7 +121,7 @@ function Corrector() {
                             onChange={(e) => setInputValue(e.target.value)}
                             placeholder="Saisissez ou collez votre texte ici pour corriger son orthographe ou sa grammaire..." />
                         <div className="corrector_input_actions">
-                            <span className="label_limit"> {inputValue.length} / 1000 caractères.</span>
+                            <span className="label_limit"> {inputValue.length} /300 lettres.</span>
                             <div className="corrector_input--buttons">
                                 <button
                                     onClick={deleteText}>

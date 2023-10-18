@@ -13,13 +13,13 @@
     font-size: 2rem;
     font-weight: bold;
     padding: 0 10%;
-
 }
 
 .about p {
-    padding: 1rem 12%;
+    padding: 1rem 2%;
     font-size: 1.2rem;
-   
+    line-height: 1.8;
+    width: 80%
 }
 
 .about img {
@@ -65,7 +65,6 @@
     padding: 0rem 2%;
     font-size: 2.5rem;
     font-weight: bold;
-
 }
 
 #pipe {
@@ -94,6 +93,58 @@ background-image: -webkit-linear-gradient(0deg, #673ab7 22%, #43a6e8 67%);
         align-items: center;
         gap: 2rem;
 
-    
     }
+}
+
+@media(max-width:810px){
+    .about h2 {
+        font-size: 1.5rem;
+       
+       
+    }
+    .about img {
+        width: 30vw;
+       
+    }
+    
+}
+
+@media(max-width:710px){
+    .about_text > p  {
+        font-size: 2rem;
+    }
+    
+}
+
+@media(max-width:630px){
+    .about h2 {
+        font-size: 1.3rem;
+    }
+
+    .about p {
+        font-size: 1rem;
+    }
+    .about_text > p  {
+        font-size: 1.7rem;
+    }
+}
+
+@media(max-width:550px){
+
+    .about_text > p  {
+        font-size: 1.4rem;
+      
+    }
+
+}
+
+@media(max-width:470px){
+
+    .about_text > p  {
+        font-size: 1.2rem;
+    }
+
+   
+
+
 }

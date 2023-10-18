@@ -12,7 +12,26 @@ footer
    
 }
 
+footer p {
+    font-weight: bold;
+}
+
 footer a 
 {
     color: #fff;
+    font-weight: bold;
+}
+
+  /******************
+* Responsive design 
+*******************/
+
+@media(max-width:630px){
+    footer p{
+        font-size: .7rem;
+    }
+
+    footer a{
+        font-size: .7rem;
+    }
 }

@@ -1,6 +1,6 @@
 header
 {
-    padding: 2rem;
+    padding: 2rem 8%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,4 +22,67 @@ header p
     font-size: 1.6rem;
     padding: 1rem 12%;
   
+}
+
+/******************
+* Responsive design 
+*******************/
+
+@media(max-width:810px){
+    header h1 
+    {
+        font-weight: 700;
+        font-size: 2.5rem;
+        letter-spacing: .2rem;
+        text-align: center;
+    }
+    
+    header p 
+    {
+        text-align: center;
+        font-size: 1.3rem;
+        padding: 1rem 12%;
+      
+    }
+
+}
+
+@media(max-width:710px){
+
+    header h1 
+    {
+      
+        font-size: 2rem;
+      
+    }
+
+
+    header p 
+    {
+        font-size: 1.2rem;
+     
+    }
+}
+
+@media(max-width:630px){
+    header h1 
+    {
+        
+        font-size: 1.5rem;
+       
+    }
+
+    header p 
+    {
+        font-size: 1rem;
+     
+    }
+}
+
+@media(max-width:470px){
+    header p 
+    {
+        font-size: 1.1rem;
+        padding: 1rem 7%;
+    }
 }

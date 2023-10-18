@@ -197,3 +197,45 @@ button:active .button_copy {
      40%,50% {transform: rotate(0.25turn) scale(0.5)}
      100%    {transform: rotate(0.5turn) scale(1)}
   }
+
+
+  /******************
+* Responsive design 
+*******************/
+
+@media(max-width:810px){
+    main{
+        font-size: 85%
+    }
+
+    button {
+        font-size: .8rem;
+        font-weight: 600;
+
+    }
+
+
+}
+
+@media(max-width:520px){
+    button {
+        font-size: .6rem;
+        
+    }
+
+    main{
+        font-size: 80%
+    }
+}
+
+@media(max-width:470px){
+
+   .label_limit {
+    font-size: .6rem;
+   }
+    button
+    {
+        font-size: .5rem;
+    }
+}
+
