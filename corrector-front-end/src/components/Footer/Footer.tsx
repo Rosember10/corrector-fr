@@ -1,5 +1,5 @@
 import './Footer.css'
-
+// test of git 
 function Footer() {
     return (
         <footer>
