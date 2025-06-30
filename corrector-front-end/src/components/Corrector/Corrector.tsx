@@ -44,8 +44,8 @@ function Corrector() {
         setIsValidCopy(false)
         setIsLoading("corrector_output loader")
         setOutputValue("Gram est en train de réfléchir...")
-
-        let valueToCorrect = {
+        
+        const valueToCorrect = {
             "text": inputValue
         }
         const headers = {
