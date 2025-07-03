@@ -11,7 +11,7 @@ import Info from "../Info/Info";
 
 
 function Corrector() {
-    console.log("rosemberg.dev 2025");
+    console.log("rosemberg.dev 2025 test");
     
     const URL_API = 'https://apichecker.rosemberg.dev/api/checker';
 
